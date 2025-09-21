@@ -1,0 +1,61 @@
+<!-- templates/accounts/register.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container auth-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card auth-card">
+                <div class="card-header auth-header text-center py-3">
+                    <h3 class="mb-0">Crear Cuenta</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_username" class="form-label">Usuario</label>
+                                {{ form.username }}
+                                {% if form.username.errors %}
+                                <div class="text-accent small mt-1">{{ form.username.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_email" class="form-label">Correo electrónico</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                <div class="text-accent small mt-1">{{ form.email.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_password1" class="form-label">Contraseña</label>
+                                {{ form.password1 }}
+                                {% if form.password1.errors %}
+                                <div class="text-accent small mt-1">{{ form.password1.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_password2" class="form-label">Confirmar contraseña</label>
+                                {{ form.password2 }}
+                                {% if form.password2.errors %}
+                                <div class="text-accent small mt-1">{{ form.password2.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary-custom w-100 py-2">Registrarse</button>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}" class="text-secondary">Inicia sesión aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

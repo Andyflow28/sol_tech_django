@@ -1,0 +1,53 @@
+<!-- templates/dashboard/dashboard.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1>Panel de Control</h1>
+                <p class="lead mb-0">Gestiona tus estaciones meteorológicas</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="{% url 'add_station' %}" class="btn btn-secondary-custom">
+                    <i class="bi bi-plus-circle"></i> Agregar Estación
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {% if stations %}
+    <div class="row">
+        {% for station in stations %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card station-card h-100">
+                <div class="card-header station-card-header">
+                    <h5 class="card-title mb-0">{{ station.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>Ubicación:</strong> {{ station.location }}</p>
+                    <p class="card-text"><strong>API Key:</strong> <code class="text-tertiary">{{ station.api_key }}</code></p>
+                    <p class="card-text"><small class="text-muted">Agregada el {{ station.created_at|date:"d/m/Y" }}</small></p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <form action="{% url 'delete_station' station.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm btn-accent">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <h3 class="text-tertiary">No tienes estaciones registradas</h3>
+        <p class="lead">Comienza agregando tu primera estación meteorológica</p>
+        <a href="{% url 'add_station' %}" class="btn btn-primary-custom btn-lg mt-3">Agregar Primera Estación</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
