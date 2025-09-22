@@ -1,10 +1,9 @@
-# settings.py
 import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'tu-clave-secreta-aqui'  # Cambia en producción
+SECRET_KEY = 'django-insecure-tu-clave-secreta-aqui-cambiar-en-produccion'
 
 DEBUG = True
 
@@ -31,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'weather_station.urls'
+ROOT_URLCONF = 'soltech.urls'
 
 TEMPLATES = [
     {
@@ -81,3 +80,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

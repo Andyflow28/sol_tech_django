@@ -1,0 +1,415 @@
+:root {
+    /* Paleta de colores - Sol, Lluvia y Tecnología */
+    --color-sol: #FFB347;
+    --color-lluvia: #4FC3F7;
+    --color-tecnologia: #6A5ACD;
+    --color-naturaleza: #4CAF50;
+    --color-texto: #2C3E50;
+    --color-fondo: #F8F9FA;
+    --color-accento: #E74C3C;
+}
+
+
+/* Estilos generales */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* Navbar con gradiente sol-lluvia */
+
+.bg-primary-custom {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    border-radius: 5px;
+}
+
+
+/* Botones principales */
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Botones secundarios */
+
+.btn-secondary-custom {
+    background-color: var(--color-tecnologia);
+    border-color: var(--color-tecnologia);
+    color: white;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #5A4ABC;
+    border-color: #5A4ABC;
+    color: white;
+}
+
+
+/* Botones de acento */
+
+.btn-accent {
+    background-color: var(--color-accento);
+    border-color: var(--color-accento);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #D32F2F;
+    border-color: #D32F2F;
+    color: white;
+}
+
+
+/* Colores de texto */
+
+.text-sol {
+    color: var(--color-sol);
+}
+
+.text-lluvia {
+    color: var(--color-lluvia);
+}
+
+.text-tecnologia {
+    color: var(--color-tecnologia);
+}
+
+.text-naturaleza {
+    color: var(--color-naturaleza);
+}
+
+.bg-tecnologia {
+    background: linear-gradient(135deg, var(--color-tecnologia) 0%, #7B68EE 100%) !important;
+}
+
+
+/* Footer */
+
+.footer-custom {
+    background: linear-gradient(135deg, var(--color-texto) 0%, #34495E 100%);
+    color: white;
+}
+
+.footer-custom img {
+    border-radius: 5px;
+}
+
+
+/* Tarjetas de estaciones */
+
+.station-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.station-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.station-card-header {
+    background: linear-gradient(135deg, var(--color-lluvia) 0%, var(--color-tecnologia) 100%);
+    color: white;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+
+/* Dashboard header */
+
+.dashboard-header {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%);
+    color: white;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+
+/* Formularios */
+
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.auth-header {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%);
+    color: white;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.form-control:focus {
+    border-color: var(--color-tecnologia);
+    box-shadow: 0 0 0 0.2rem rgba(106, 90, 205, 0.25);
+}
+
+
+/* Alertas */
+
+.alert-accent {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-color: var(--color-accento);
+    color: #D32F2F;
+}
+
+
+/* Hero Section */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Feature cards */
+
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+}
+
+.icon-sol {
+    background: linear-gradient(135deg, rgba(255, 179, 71, 0.2) 0%, rgba(255, 179, 71, 0.1) 100%);
+    color: var(--color-sol);
+}
+
+.icon-lluvia {
+    background: linear-gradient(135deg, rgba(79, 195, 247, 0.2) 0%, rgba(79, 195, 247, 0.1) 100%);
+    color: var(--color-lluvia);
+}
+
+.icon-tecnologia {
+    background: linear-gradient(135deg, rgba(106, 90, 205, 0.2) 0%, rgba(106, 90, 205, 0.1) 100%);
+    color: var(--color-tecnologia);
+}
+
+
+/* Mejoras generales */
+
+.card {
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #E0E0E0;
+}
+
+
+/* Layout */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/* Animaciones suaves */
+
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Utilidades adicionales */
+
+.shadow-custom {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-sol) 0%, var(--color-lluvia) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Mejoras para formularios de autenticación */
+
+.auth-card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    font-size: 0.875rem;
+    color: var(--color-tertiary);
+}
+
+
+/* Enlace de "Inicia sesión aquí" */
+
+.text-tecnologia {
+    color: var(--color-tecnologia);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text-tecnologia:hover {
+    color: #5A4ABC;
+    text-decoration: underline;
+}
+
+
+/* Mejoras responsive para formularios */
+
+@media (max-width: 576px) {
+    .auth-card {
+        margin: 1rem;
+        border-radius: 10px;
+    }
+    .auth-container {
+        padding: 1rem 0;
+    }
+}
+
+
+/* Estilos para mensajes de error */
+
+.text-accent {
+    color: var(--color-accento);
+    font-size: 0.875rem;
+}
+
+
+/* Placeholders más legibles */
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+}

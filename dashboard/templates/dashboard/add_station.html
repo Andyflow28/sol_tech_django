@@ -1,7 +1,4 @@
-<!-- templates/dashboard/add_station.html -->
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,32 +9,26 @@
                 <div class="card-body p-4">
                     <form method="post">
                         {% csrf_token %}
-                        
+
                         <div class="mb-3">
-                            <label for="id_name" class="form-label">Nombre de la estación</label>
-                            {{ form.name }}
-                            {% if form.name.errors %}
+                            <label for="id_name" class="form-label">Nombre de la estación</label> {{ form.name }} {% if form.name.errors %}
                             <div class="text-accent small mt-1">{{ form.name.errors }}</div>
                             {% endif %}
                         </div>
-                        
+
                         <div class="mb-3">
-                            <label for="id_location" class="form-label">Ubicación</label>
-                            {{ form.location }}
-                            {% if form.location.errors %}
+                            <label for="id_location" class="form-label">Ubicación</label> {{ form.location }} {% if form.location.errors %}
                             <div class="text-accent small mt-1">{{ form.location.errors }}</div>
                             {% endif %}
                         </div>
-                        
+
                         <div class="mb-4">
-                            <label for="id_api_key" class="form-label">Clave API</label>
-                            {{ form.api_key }}
-                            {% if form.api_key.errors %}
+                            <label for="id_api_key" class="form-label">Clave API</label> {{ form.api_key }} {% if form.api_key.errors %}
                             <div class="text-accent small mt-1">{{ form.api_key.errors }}</div>
                             {% endif %}
                             <div class="form-text">Ingresa la clave API única proporcionada con tu estación.</div>
                         </div>
-                        
+
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="{% url 'dashboard' %}" class="btn btn-secondary me-md-2">Cancelar</a>
                             <button type="submit" class="btn btn-primary-custom">Agregar Estación</button>

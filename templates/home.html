@@ -1,64 +1,51 @@
-<!-- templates/home.html -->
-{% extends 'base.html' %}
-
-{% block content %}
-<div class="container py-5">
-    <div class="row align-items-center">
-        <div class="col-lg-6">
-            <h1 class="display-4 fw-bold mb-4">Sistema de Estaciones Meteorológicas</h1>
-            <p class="lead mb-4">Monitorea y gestiona tus estaciones meteorológicas desde una plataforma moderna y responsive.</p>
-            <div class="d-grid gap-2 d-md-flex">
-                <a href="{% url 'register' %}" class="btn btn-primary-custom btn-lg me-md-2">Comenzar ahora</a>
-                <a href="#features" class="btn btn-outline-secondary btn-lg">Más información</a>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1>Tecnología con Propósito</h1>
+                <p class="lead">Cómo medir el mundo para cambiarlo</p>
+                <p>Explora cómo la tecnología y los datos ambientales pueden transformar comunidades</p>
+                <div class="mt-4">
+                    <a href="{% url 'register' %}" class="btn btn-light btn-lg me-3">Comenzar Ahora</a>
+                    <a href="#taller" class="btn btn-outline-light btn-lg">Más Información</a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6 text-center">
-            <img src="https://via.placeholder.com/500x300/4CAF50/FFFFFF?text=Weather+Station" alt="Estación meteorológica" class="img-fluid rounded shadow">
         </div>
     </div>
-</div>
+</section>
 
-<section id="features" class="bg-light py-5">
+<!-- Taller Section -->
+<section id="taller" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Características Principales</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <div class="bg-primary-custom rounded-circle p-3 d-inline-block mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-cloud" viewBox="0 0 16 16">
-                                <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
-                            </svg>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Taller: Tecnología con Propósito</h2>
+                <p class="lead mb-4">Aprende a diseñar soluciones tech con impacto social</p>
+
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <div class="card feature-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon icon-sol">
+                                    <i class="bi bi-calendar-event"></i>
+                                </div>
+                                <h4>27 de Septiembre</h4>
+                                <p class="text-muted">Duración: 50 minutos</p>
+                            </div>
                         </div>
-                        <h4 class="card-title">Monitoreo en Tiempo Real</h4>
-                        <p class="card-text">Accede a datos meteorológicos actualizados de todas tus estaciones desde cualquier dispositivo.</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <div class="bg-secondary-custom rounded-circle p-3 d-inline-block mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-shield-check" viewBox="0 0 16 16">
-                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
-                                <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                            </svg>
+                    <div class="col-md-6">
+                        <div class="card feature-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="feature-icon icon-lluvia">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Dirigido a</h4>
+                                <p class="text-muted">Jóvenes, emprendedores y curiosos de la tecnología</p>
+                            </div>
                         </div>
-                        <h4 class="card-title">Gestión Centralizada</h4>
-                        <p class="card-text">Administra todas tus estaciones desde un único dashboard intuitivo y fácil de usar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <div class="bg-accent rounded-circle p-3 d-inline-block mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bell" viewBox="0 0 16 16">
-                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                            </svg>
-                        </div>
-                        <h4 class="card-title">Alertas Inteligentes</h4>
-                        <p class="card-text">Recibe notificaciones inmediatas cuando tus estaciones detecten condiciones meteorológicas extremas.</p>
                     </div>
                 </div>
             </div>
@@ -66,30 +53,64 @@
     </div>
 </section>
 
+<!-- Características Section -->
 <section class="py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <h2 class="fw-bold mb-4">Diseño Responsive</h2>
-                <p class="lead mb-4">Nuestra plataforma se adapta perfectamente a cualquier dispositivo, desde computadoras de escritorio hasta smartphones.</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><span class="text-primary-custom me-2">✓</span> Interfaz optimizada para móviles</li>
-                    <li class="mb-2"><span class="text-primary-custom me-2">✓</span> Acceso desde cualquier navegador</li>
-                    <li class="mb-2"><span class="text-primary-custom me-2">✓</span> Carga rápida y eficiente</li>
-                </ul>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon icon-sol">
+                            <i class="bi bi-brightness-high"></i>
+                        </div>
+                        <h4 class="text-sol">Sol</h4>
+                        <p>Energía solar y medición de radiación para comunidades sostenibles.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6 order-lg-1 text-center">
-                <img src="https://via.placeholder.com/500x300/4FC3F7/FFFFFF?text=Responsive+Design" alt="Diseño responsive" class="img-fluid rounded shadow">
+            <div class="col-lg-4 mb-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon icon-lluvia">
+                            <i class="bi bi-cloud-rain"></i>
+                        </div>
+                        <h4 class="text-lluvia">Lluvia</h4>
+                        <p>Monitoreo de precipitaciones y gestión inteligente del agua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon icon-tecnologia">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <h4 class="text-tecnologia">Tecnología</h4>
+                        <p>Soluciones IoT y análisis de datos para un futuro más inteligente.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-primary-custom text-white py-5">
+<!-- CTA Section -->
+<section class="bg-tecnologia text-white py-5">
     <div class="container text-center">
         <h2 class="mb-4">¿Listo para comenzar?</h2>
-        <p class="lead mb-4">Regístrate ahora y comienza a gestionar tus estaciones meteorológicas</p>
+        <p class="lead mb-4">Únete a nuestra comunidad y comienza a monitorear estaciones meteorológicas</p>
         <a href="{% url 'register' %}" class="btn btn-light btn-lg">Crear una cuenta gratuita</a>
     </div>
 </section>
-{% endblock %}  
+
+<!-- Contacto Section -->
+<section class="py-4 bg-light">
+    <div class="container text-center">
+        <p class="mb-0">
+            <strong>@solylluvia_tech</strong> |
+            <strong>solluviaytecnologia@gmail.com</strong> |
+            <strong>Mérida - Venezuela</strong>
+        </p>
+    </div>
+</section>
+{% endblock %}

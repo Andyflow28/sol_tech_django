@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Validación de formularios
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(function(form) {
         form.addEventListener('submit', function(event) {
             const requiredFields = form.querySelectorAll('[required]');
             let valid = true;
-            
+
             requiredFields.forEach(function(field) {
                 if (!field.value.trim()) {
                     valid = false;
@@ -28,17 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     field.classList.remove('is-invalid');
                 }
             });
-            
+
             if (!valid) {
                 event.preventDefault();
                 event.stopPropagation();
-                
+
                 // Mostrar mensaje de error general
                 const errorDiv = document.createElement('div');
-                errorDiv.className = 'alert alert-accent mt-3';
+                errorDiv.className = 'alert alert-danger mt-3';
                 errorDiv.textContent = 'Por favor, complete todos los campos requeridos.';
                 form.appendChild(errorDiv);
-                
+
                 // Hacer scroll al primer error
                 const firstInvalid = form.querySelector('.is-invalid');
                 if (firstInvalid) {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Funcionalidad para copiar API Key
 document.addEventListener('DOMContentLoaded', function() {
     const copyButtons = document.querySelectorAll('.copy-api-key');
-    
+
     copyButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             const apiKey = this.getAttribute('data-api-key');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const originalText = button.innerHTML;
                 button.innerHTML = '<i class="bi bi-check"></i> Copiado';
                 button.classList.add('btn-success');
-                
+
                 setTimeout(function() {
                     button.innerHTML = originalText;
                     button.classList.remove('btn-success');

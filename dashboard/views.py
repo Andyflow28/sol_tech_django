@@ -1,8 +1,7 @@
-# dashboard/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import WeatherStation
-from .forms import WeatherStationForm
+from .forms import WeatherStationForm  # Solo importar WeatherStationForm
 
 @login_required
 def dashboard(request):
